@@ -1,0 +1,16 @@
+app-id: io.github.starnight.gtkdemo
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: demo
+
+finish-args:
+  - --socket=fallback-x11
+  - --socket=wayland
+
+modules:
+  - name: gtkdemo
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: ../../src
